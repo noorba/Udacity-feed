@@ -32,10 +32,11 @@ $(function() {
          */
 
         it('Ensure all feed contain URL and not Empty ', function() {
-            for (var i = 0; i < allFeeds.length; i++) {
-                expect(allFeeds[i].url).toBeDefined();
+           allFeeds.forEach(function(feed){
+			   var i=0;
+            expect(feed.url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toBe(0);
-            }
+            });
         });
 
 
@@ -62,7 +63,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('Hidden by default', function() {
-            expect($('.menu-hidden').length).not.toBe(0);
+            expect($('.menu-hidden').hasClass).not.toBe(0);
         });
 
         /* TODO: Write a test that ensures the menu changes
@@ -72,9 +73,9 @@ $(function() {
          */
         it('Menu icon changes when clicked', function(done) {
 
-            $('.menu-icon-link').trigger('click');
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(false);
-            $('.menu-icon-link').trigger('click');
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(true);
             done();
         });
@@ -115,7 +116,7 @@ $(function() {
         });
 
         it('Load new data feed', function() {
-			loadFeed(1, function() {
+			loadFeed(2, function() {
             expect($('.feed').html()).not.toBe(fArticle);
 			done();
         });

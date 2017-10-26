@@ -1,7 +1,7 @@
 # Installation
 - web browser.
 - clone  https://github.com/udacity/frontend-nanodegree-feedreader.git.
-- Jasmine documentaion.
+- Jasmine documentaion /jasmine/spec/feedreader.js
 
 
 # Project Descriton
